@@ -86,7 +86,7 @@ const updateBooking = async (req, res) => {
       }
     );
     result.value
-      ? sendResponse(res, 200, result.value, `A booking was found, id : ${_id}`)
+      ? sendResponse(res, 200, result.value, `A booking was found and updated, id : ${_id}`)
       : sendResponse(res, 404, result.value, `A booking was not found, id : ${_id} `);
   } catch (error) {
     sendResponse(res, 500, null, "Server Error");
