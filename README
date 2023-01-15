@@ -1,0 +1,2 @@
+//start the server by the following command
+nodemon server

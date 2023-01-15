@@ -62,7 +62,7 @@ const addNewBooking = async (req, res) => {
       checkOutDate: req.body.checkOutDate,
     };
     console.log(booking)
-    await db.collection("bookings").insertOne(JSON.parse(booking));
+    await db.collection("bookings").insertOne(booking);
     sendResponse(res, 201, booking, "A booking was created");
   } catch (error) {
     sendResponse(res, 500, null, "Server Error");
