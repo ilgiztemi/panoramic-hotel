@@ -61,9 +61,13 @@ const addNewBooking = async (req, res) => {
       checkInDate: req.body.checkInDate,
       checkOutDate: req.body.checkOutDate,
     };
-    console.log(booking)
-    await db.collection("bookings").insertOne(booking);
-    sendResponse(res, 201, booking, "A booking was created");
+    if(parseInt(req.body.numberOfPeople) <= 3) {
+      await db.collection("bookings").insertOne(booking);
+      sendResponse(res, 201, booking, "A booking was created");
+    }
+    else {
+      sendResponse(res, 201, booking, "Each booking allows up to 3 people for up to 3 days");
+    }
   } catch (error) {
     sendResponse(res, 500, null, "Server Error");
   }
@@ -86,7 +90,7 @@ const updateBooking = async (req, res) => {
       }
     );
     result.value
-      ? sendResponse(res, 200, result.value, `A booking was found and updated, id : ${_id}`)
+      ? sendResponse(res, 200, req.body, `A booking was found and updated, id : ${_id}`)
       : sendResponse(res, 404, result.value, `A booking was not found, id : ${_id} `);
   } catch (error) {
     sendResponse(res, 500, null, "Server Error");
