@@ -1,2 +1,14 @@
+//framewok used
+node js
+
+//middleware used
+express js
+
+//npm dependencies used
+nodemon, morgan, dontenv, mongodb, cors, moment and express
+
+//data is stored to database
+mongoDB
+
 //start the server by the following command
 nodemon server

@@ -6,7 +6,7 @@ const PORT = 8888;
 
 express()
   .use(cors({    
-    origin: ["http://localhost:3000"],
+    origin: [""],
 }))
   .use(function (req, res, next) {
     res.header(
@@ -25,4 +25,4 @@ express()
   .use("/", express.static(__dirname + "/"))
   .use(require("./routes/bookingsRoutes"))
 
-  .listen(PORT, () => console.log(`Listening on port ${PORT}`));
+  // .listen(PORT, () => console.log(`Listening on port ${PORT}`));
