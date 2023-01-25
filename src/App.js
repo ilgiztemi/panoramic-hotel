@@ -15,5 +15,9 @@ const App = () => {
 const Div = styled.div`
   height: 100vh;
   width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 `
 export default App;

@@ -42,9 +42,9 @@ const HomePage = () => {
 };
 const MainDiv = styled.div`
   height: 100vh;
-  width: 100vw;
-  overflow-y: hidden;
-  overflow-x: scroll;
+  width: 600vw;
+  display: flex;
+  flex-direction: row;
   section:nth-child(even) {
     background-color: aquamarine;
   }
@@ -55,6 +55,7 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
   div {
     h1 {
     font-size: 90px;
