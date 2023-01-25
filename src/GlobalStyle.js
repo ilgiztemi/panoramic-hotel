@@ -9,10 +9,9 @@ const GlobalStyle = createGlobalStyle`
 html {
   height: fill-available;
   height: -webkit-fill-available;
+  scroll-behavior: smooth;
 }
-.ReactModal__Body--open {
-    background: rgba(0,0,0,0.8);
-  }
+
   body {
   margin: 0;
   padding: 0;
@@ -24,6 +23,7 @@ html {
   min-height: fill-available;
   min-height: -webkit-fill-available;
   letter-spacing: 1px;
+  scroll-behavior: smooth;
   a {
     text-decoration: none;
     color: inherit;
@@ -39,7 +39,10 @@ html {
     padding: 0;
     margin: 0;
   }
- }
+}
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default GlobalStyle;
